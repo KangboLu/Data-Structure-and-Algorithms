@@ -1,3 +1,4 @@
+// how to run: c++ -std=c++11 file.cpp
 #include <iostream>
 #include <algorithm>
 using namespace std;
