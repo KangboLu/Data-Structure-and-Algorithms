@@ -90,27 +90,6 @@ void deletTail() {
   temp -> next = NULL; // set temp to tail
 }
 
-// delete the whole list
-// void deleteList() {
-//   if (isEmpty()) {
-//     cout << "List is empty! No need for deletion!" << endl;
-//     return;
-//   }
-
-//   // delete 
-//   Node* current = head; 
-//   Node* temp = head;
-//   while (current -> next != NULL) {
-//     // let temp the current node and move current to next node
-//     temp = current;
-//     current = current -> next;
-
-//     // delete current temp node
-//     temp -> next == NULL;
-//   }
-//   delete current; // delete the last node
-// }
-
 // delete desired value in linked list
 void deleteDesiredValue(int desiredValue) {
   // first check if empty
@@ -120,7 +99,8 @@ void deleteDesiredValue(int desiredValue) {
   }
 
   // create temp and prev node for iterations
-  Node* temp = head, *prev = NULL;
+  Node* temp = head;
+  Node *prev = NULL;
 
   // if the head is the desired value
   if (head -> data == desiredValue) {
@@ -137,7 +117,7 @@ void deleteDesiredValue(int desiredValue) {
   }
 
   // desired value does not exist
-  if (temp = NULL) {
+  if (temp == NULL) {
     cout << "Desired value does not exist in linked list" << endl;
   }
   // desire value exist, delete it
@@ -174,9 +154,14 @@ void listLength() {
 }
 
 // find the linked list length recursively
-int listLengthRecursive(Node* current) {
+int LengthRecursiveHelper(Node* current) {
   if (current == NULL) return 0;
-  return (1 + listLengthRecursive(current -> next));
+  return (1 + LengthRecursiveHelper(current -> next));
+}
+
+int listLengthRecursive() {
+  int length = LengthRecursiveHelper(head);
+  cout << "List Length is " << length << endl;
 }
 
 // output list
@@ -231,4 +216,14 @@ int main() {
   cout << "Demonstrate deleteDesiredValue() function\n";
   deleteDesiredValue(1);
   outputList(); // print the linked list
+
+  // search a specified value
+  cout << "Demonstrate search() function\n";
+  search(1);
+
+  // length of a linkedin list
+  cout << "Finding length iteratively: length = ";
+  listLength(); 
+  cout << "\nFinding length recursively: length = ";
+  listLengthRecursive(); 
 }
