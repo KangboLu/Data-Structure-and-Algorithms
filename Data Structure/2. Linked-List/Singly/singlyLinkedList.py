@@ -96,6 +96,11 @@ class LinkedList(object):
       currentNode = currentNode.next # go the location before tail
     currentNode.next = None
 
+  # delete the whole list
+  def delete_list(self):
+    while not self.is_empty():
+      self.delete_front()
+
   # delete a specified value
   def delete_specified(self, specified):
     # if list is empty
@@ -141,7 +146,7 @@ class LinkedList(object):
   def print_list(self):
     # if the list is empty
     if self.is_empty():
-      print("List is empty!")
+      print("Nothing to print! List is empty!")
       return
 
     # not empty, iterate and print it
@@ -205,5 +210,11 @@ print("- Try search -5!")
 linked_list.search(-5)
 print("- Try search -4!")
 linked_list.search(-4)
+linked_list.print_list()
+linked_list.linked_list_status()
+
+# delete the whole list
+linked_list.delete_list()
+print("- Deleted the whole list!")
 linked_list.print_list()
 linked_list.linked_list_status()
