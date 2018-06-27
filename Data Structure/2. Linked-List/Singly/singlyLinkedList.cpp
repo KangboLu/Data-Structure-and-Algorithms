@@ -90,6 +90,12 @@ void deletTail() {
   temp -> next = NULL; // set temp to tail
 }
 
+// delete the whole list
+void deleteList() {
+  while (!isEmpty())
+  	deleteHead();
+}
+
 // delete desired value in linked list
 void deleteDesiredValue(int desiredValue) {
   // first check if empty
@@ -183,47 +189,49 @@ void outputList() {
 
 int main() {
   // insert in the front
-  cout << "Demonstrate insertFront() function\n";
+  cout << "\nDemonstrate insertFront() function\n";
   for (int i = 1; i < 5; i++) 
     insertFront(i);
   outputList(); // print the linked list
 
-  // delete the linked list
-  // deleteList();
-
   // insert at the end
-  cout << "Demonstrate insertBack() function\n";
+  cout << "\nDemonstrate insertBack() function\n";
   for (int i = 2; i < 5; i++) 
     insertBack(i);
   outputList(); // print the linked list
 
   // insert value after 1
-  cout << "Demonstrate insertAfterValue() function\n";
+  cout << "\nDemonstrate insertAfterValue() function\n";
   insertAfterValue(1, 1);
   outputList(); // print the linked list
 
   // delete tail
-  cout << "Demonstrate deleteTail() function\n";
+  cout << "\nDemonstrate deleteTail() function\n";
   deletTail();
   outputList(); // print the linked list
 
   // delete head
-  cout << "Demonstrate deleteHead() function\n";
+  cout << "\nDemonstrate deleteHead() function\n";
   deleteHead();
   outputList(); // print the linked list
 
   // delete a specified value
-  cout << "Demonstrate deleteDesiredValue() function\n";
+  cout << "\nDemonstrate deleteDesiredValue() function\n";
   deleteDesiredValue(1);
   outputList(); // print the linked list
 
   // search a specified value
-  cout << "Demonstrate search() function\n";
+  cout << "\nDemonstrate search() function\n";
   search(1);
 
   // length of a linkedin list
-  cout << "Finding length iteratively: length = ";
+  cout << "\nFinding length iteratively: length = ";
   listLength(); 
-  cout << "\nFinding length recursively: length = ";
+  cout << "Finding length recursively: length = ";
   listLengthRecursive(); 
+
+  // delete the list
+  cout << "\nDemonstrate deleteList() function\n";
+  deleteList();
+  outputList(); // print the linked list
 }
