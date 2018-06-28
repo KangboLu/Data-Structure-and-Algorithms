@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "array": "cpp",
+    "*.tcc": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "vector": "cpp",
+    "system_error": "cpp",
+    "regex": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "hashtable": "cpp",
+    "iostream": "cpp"
+  }
+}
