@@ -4,53 +4,58 @@
 using namespace std;
 
 // merge two parts of the sorted array
-void merge(vector<int>& array, int low, int mid, int high) {
-  // compare the vector and assign it to the temp
-  vector<int> temp(array.size(), {0});
-  int low1 = low, low2 = mid+1, i = low;
-  for (low1, low2, i; low1 <= mid && low2 <= high; i++) {
-    if (array[low1] <= array[low2])
-      temp[i] = array[low1++];
-    else
-      temp[i] = array[low2++];
+void merge(vector<int>& S1, vector<int>& S2, vector<int>& S) {
+  int i = 0; // current S1 pointer location
+  int j = 0; // current S2 pointer location
+  while ((i+j) < S.size()) {
+    if (j == S2.size() || (i < S1.size() && S1[i] < S2[j])) {
+      S[i+j] = S1[i];
+      i += 1;
+    }
+    else {
+      S[i+j] = S2[j];
+      j += 1;
+    }
   }
-
-  // assign rest values to the temp vector
-  while (low1 <= mid)
-    temp[i++] = array[low1++];
-  while (low2 <= high)
-    temp[i++] = array[low2++];
-  
-  // copy the sorted array to the original array
-  for (i = low; i <= high; i++)
-    array[i] = temp[i];
 }
 
 // sort the array
-void sort(vector<int>& array, int low, int high) {
-  if (low < high) {
-    int mid = (low + high) / 2; // get mid position
-    sort(array, low, mid); // sort the first half
-    sort(array, mid+1, high); // sort the second half
-    merge(array, low, mid, high); // merge both halves
-  }
-  else {
-    return; // size check
-  }
+void mergeSort(vector<int>& S) {
+  // cout << "line 24\n";
+  int n = S.size();
+  // if the array has only 1 element
+  if (n < 2)
+    return;
+  
+  int mid = n / 2; // get mid position
+
+  // divide the array into two halfs
+  vector<int> S1;
+  vector<int> S2;
+  int i = 0;
+  while (i < mid)
+    S1.push_back(S[i++]);
+  while (i < n)
+    S2.push_back(S[i++]);
+
+  // conquer with recursion
+  mergeSort(S1); // recursively sort the first half
+  mergeSort(S2); // recursively sort the second half
+  merge(S1, S2, S); // merge both halves
 }
 
 int main() {
   cout << "Mergesort O(nlogn) Algorithm\n";
-  vector<int> array{9,8,7,6,5,4,3,2,1};
+  vector<int> S{5,4,3,2,1};
   cout << "Before sorting: ";
-  for (auto num: array)
+  for (auto num: S)
     cout << num << " ";
   cout << endl;
 
   // run merge sort on given array
-  sort(array, 0, array.size()-1);
+  mergeSort(S);
   cout << "After sorting: ";
-  for (auto num: array)
+  for (auto num: S)
     cout << num << " ";
   cout << endl;
 }
