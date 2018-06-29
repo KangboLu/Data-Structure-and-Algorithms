@@ -56,29 +56,27 @@ class circularLinkedList {
       return;
     }
 
-    // create temp and prev node for iterations
-    Node* temp = head;
-    Node *prev = NULL;
-
     // if the head is the desired value
     if (head -> data == desiredValue) {
+      Node* tail = getLastNode(); // get tail node
+      tail -> next = head -> next; // let tail points to new head
       head = head -> next; // let the next node be new head
-      temp -> next = NULL; // let original head points to NULL
-      delete temp; // delete original head
       return;
     }
 
     // iterate the linked list to find the desiredValue
-    while (temp != NULL && temp -> data != desiredValue) {
+    Node* temp = head;
+    Node *prev = NULL;
+    while (temp -> next != head && temp -> data != desiredValue) {
       prev = temp; // set prev to the temp node
       temp = temp -> next; // let temp be the next node
     }
 
     // desired value does not exist
-    if (temp == NULL) {
+    if (temp == head) {
       cout << "Desired value does not exist in linked list" << endl;
     }
-    // desire value exist, delete it
+    // desired value exist, delete it
     else {
       prev -> next = temp -> next; // let prev node points to temp's next node
       temp -> next = NULL; // let desired node points to NULL
@@ -90,25 +88,26 @@ class circularLinkedList {
   void search(int desiredValue) {
     Node* temp = head;
     // iterate the list to find the desired value
-    while (temp != NULL && temp -> data != desiredValue)
+    while (temp -> next != head && temp -> data != desiredValue)
       temp = temp -> next;
     
     // if the desired value does not exist
-    if (temp == NULL)
-      cout << "Desired Value Not Found!" << endl;
+    if (temp == head)
+      cout << "Desired Value " << desiredValue << " Not Found!" << endl;
     else
-      cout << "Desired Value Found in the list" << endl;
+      cout << "Desired Value " << desiredValue << " Found in the list" << endl;
   }
 
   // find the linked list length
   void listLength() {
+    // iteratively finding the length until reach a cycle
     int length = 0;
     Node* temp = head;
-    while (temp != NULL) {
+    while (temp -> next != head) {
       length += 1;
       temp = temp -> next;
     }
-    cout << "List Length is: " << length << endl;
+    cout << "List Length is: " << length+1 << endl;
   }
 
   // output list
@@ -137,23 +136,23 @@ int main() {
   circularLinkedList list;
 
   // insert in the front
-  cout << "\nDemonstrate insertBack() function\n";
+  cout << "\nDemonstrate insertBack() function: ";
   for (int i = 1; i < 10; i++) 
     list.append(i);
   cout << "Insert Successfully!\n";
   list.outputList(); // print the linked list
-  cout << "Output Successfully!\n";
 
   // delete a specified value
-  cout << "\nDemonstrate deleteValue() function\n";
+  cout << "Demonstrate deleteValue() function: ";
   list.deleteValue(1);
+  cout << "Delete Successfully!\n";
   list.outputList(); // print the linked list
 
   // search a specified value
-  // cout << "\nDemonstrate search() function\n";
-  // list.search(1);
+  cout << "Demonstrate search() function\n";
+  list.search(1);
 
   // length of a linkedin list
-  // cout << "\nFinding length iteratively: length = ";
-  // list.listLength();s
+  cout << "\nFinding length iteratively: length = ";
+  list.listLength();
 }
