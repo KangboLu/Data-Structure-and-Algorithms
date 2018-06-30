@@ -36,7 +36,7 @@ void quickSort(vector<int>& array, int left, int right) {
 }
 
 int main() {
-  cout << "Lomuto partition scheme------\n";
+  cout << "Hoare partition scheme------\n";
   cout << "Quick sort O(nlogn) algorithm\n";
   vector<int> array{5,4,3,2,1};
   cout << "Before sorting: ";
