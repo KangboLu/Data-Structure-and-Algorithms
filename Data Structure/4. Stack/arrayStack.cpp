@@ -34,7 +34,7 @@ void print(string text) {cout << text;}
 
 // test the stack
 int main() {
-  print("Array implementation of stack")
+  print("Array implementation of stack");
 
   // create a stack
   ArrayStack stack;
