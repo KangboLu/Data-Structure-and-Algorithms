@@ -2,7 +2,7 @@
 class ArrayStack:
   # constructor
   def __init__(self):
-    self.stack = [];
+    self.stack = []
 
   # check if the stack is empty
   def is_empty(self):
