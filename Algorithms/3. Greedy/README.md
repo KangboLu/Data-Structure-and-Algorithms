@@ -48,3 +48,26 @@ Find the largest possible total score we can obtain:
 
 In an optimal solution, for any two consecutive tasks, it must hold that the shorter task comes before the longer task. 
 Thus, the tasks must be performed sorted by their durations.
+
+## 4. Minimizing sums
+
+We are given n numbers a1, a2, a3, ..., an and our task is
+to find a value x that minimizes the (sum of absolute values between a1 and x) to the c power.
+
+*Case c = 1:* In the general case, the best choice for x is the median of the numbers.
+
+*Case c = 2:* In the general case, the best choice for x is the average of the numbers.
+
+## 5. Huffman Coding
+
+Huffman coding is a greedy algorithm that constructs an optimal code for compressing a 
+given string. 
+The algorithm builds a binary tree based on the frequencies of the characters in the string, 
+and each character’s codeword can be read by following a path from the root to the 
+corresponding node. 
+A move to the left corresponds to bit 0, and a move to the right corresponds to bit 1.
+
+Steps: 
+1. Initially, each character of the string is represented by a node whose weight is the number of times the character occurs in the string. 
+2. Then at each step two nodes with minimum weights are combined by creating a new node whose weight is the sum of the weights of the original nodes. 
+3. The process continues until all nodes have been combined.
