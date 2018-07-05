@@ -23,6 +23,23 @@ A binary tree is proper if each node has either zero or two children.
 Some people also refer to such trees as being full binary
 trees. Thus, in a proper binary tree, every internal node has exactly two children.
 
+*Properties:*
+
+1. The maximum nodes at level l is 2^(l-1)
+2. The maximum nodes in a binary tree with level h is 2^(h) - 1
+3. A Binary Tree with L leaves has at least ⌈ Log2L ⌉ + 1 levels l, property #1
+4. For a Binary Tree with N nodes, minimum possible height h is ⌈ Log2(N+1) ⌉, property #2
+5. In Binary tree where every node has 0 or 2 children, number of leaf nodes is always one more than nodes with two children
+
+*Types of Binary Tree:*
+
+1. Full Binary Tree: A Binary Tree is full if every node has 0 or 2 children.
+In a Full Binary, number of leaf nodes is number of internal nodes plus 1: L = I + 1
+Where L = Number of leaf nodes, I = Number of internal nodes
+2. Complete Binary Tree: A Binary Tree is complete Binary Tree if all levels are completely 
+filled except possibly the last level and the last level has all keys as left as possible
+3. Perfect Binary Tree: A Binary tree is Perfect Binary Tree in which all internal nodes have two children and all leaves are at same level.
+
 ## Binary Search Tree
 
 ## Tries
