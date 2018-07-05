@@ -15,7 +15,7 @@ struct Node {
  
 // preorder: root, left, right
 void printPreorder(struct Node* node) {
-  if (node == NULL) // reach leave node, go to prev level
+  if (node == NULL) // reach leaf node, go to prev level
     return;
 
   cout << node->data << " "; // output the value
@@ -61,10 +61,10 @@ int main() {
        << "  4   5            \n";
 
   // output different traversal approaches' results
-  cout << "\nPreorder:  root, left, right\n";
+  cout << "\n- Preorder:  root, left, right\n";
   printPreorder(root);
-  cout << "\nInorder:   left, root, right\n";
+  cout << "\n- Inorder:   left, root, right\n";
   printInorder(root); 
-  cout << "\nPostorder: left, right, root\n";
+  cout << "\n- Postorder: left, right, root\n";
   printPostorder(root);
 }
