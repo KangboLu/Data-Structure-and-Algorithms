@@ -53,6 +53,7 @@
     "utility": "cpp",
     "tuple": "cpp",
     "typeinfo": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "queue": "cpp"
   }
 }
