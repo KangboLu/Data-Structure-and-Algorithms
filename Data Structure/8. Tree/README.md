@@ -51,6 +51,17 @@ Binary Search Tree is a node-based binary tree data structure which has the foll
 
 ## Tries
 
+Trie is an *efficient data structure for searching words in dictionaries*.
+Search complexity with Trie is linear in terms of word (or key) length to be searched. 
+If we store keys in binary search tree, a well balanced BST will need time proportional to M log N, where M is maximum string length and N is number of keys in tree. 
+Using trie, we can *search the key in O(M) time*, which is faster than BST (Binary Search Tree).
+
+Hashing also provides word search in O(n) time on average. 
+But the advantages of Trie are there are no collisions (like hashing) so worst case time complexity is O(n). 
+Also, the most important thing is Prefix Search. With Trie, we can find all words beginning with a prefix (This is not possible with Hashing). 
+The only *problem with Tries* is that trie requires a lot of extra space. 
+Tries are also known as radix tree or prefix tree.
+
 ## AVL
 
 ## Red Black Tree
