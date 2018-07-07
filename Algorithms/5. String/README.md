@@ -19,3 +19,9 @@ generation of string by moving the characters of a string one by one from the be
 Ex: ABCD's rotation: ABCD, BCDA, CDAB, DABC
 
 ## Z-algorithm
+
+Z algorithm is an efficient O(n) pattern matching algorithm.
+It first concatenates the pattern with the searching string.
+And calculate the number of prefix letter matches with substring.
+If the stored Z-array has value >= the size of the pattern, there is a match.
+Else, there is no match in the string with given pattern. 
