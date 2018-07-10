@@ -1,6 +1,6 @@
 # Tree Algorithms
 
-## Tree Traversal
+## 1. Tree Traversal
 
 *1. Preorder:* root, left, right
 
@@ -24,4 +24,20 @@
 3. Visit the root
 
 *4. Breadth First:* scan left to right, level by level
+
+## 2. Diamter
+
+## 3. All Longest Paths
+
+## 4. Binary Trees
+
+# Spanning Trees
+
+## 1. Kruskal's Algorithm
+
+## 2. Union-find Structure
+
+## 3. Prim's Algorithm
+
+
 
