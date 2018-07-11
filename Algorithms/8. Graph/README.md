@@ -28,9 +28,17 @@ A BFS traversal of G takes O(n+m) time.
 
 ## 2. Shortest Paths
 
-1. Bellman-Ford Algorithm
+1. Bellman-Ford Algorithm: O(VE)
 
-2. Dijkstra's Algorithm
+* The *Bellman–Ford algorithm* finds shortest paths from a starting node to all nodes of the graph. 
+* The algorithm keeps track of distances from the starting node to all nodes of the graph. 
+* Initially, the distance to the starting node is 0 and the distance to all other nodes in infinite. The algorithm reduces the distances by finding edges hat shorten the paths until it is not possible to reduce any distance.
+* The algorithm can process all kinds of graphs, provided that
+the graph does not contain a cycle with negative length. 
+(If the graph contains a negative cycle, the algorithm can detect this.)
+
+2. Dijkstra's Algorithm: O(VlogV)
+
 
 3. Floyd-Warshall Algorithm
 
