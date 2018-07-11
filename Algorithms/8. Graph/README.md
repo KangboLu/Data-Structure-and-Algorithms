@@ -2,8 +2,20 @@
 
 ## 1. Graph Traversal
 
-1. Depth First Search
+1. Depth First Search:
 
+Graph's Depth First Search is similar to Depth First Traversal of a tree. 
+The only difference is that graphs may contain cycles, so we may come to the same node again. 
+To avoid processing a node more than once, we use a boolean visited array to track visited nodes.
+
+DFS traversal of G can be performed in O(n+m) time, and can be used to solve
+the following problems in O(n+m) time:
+* Computing a path between two given vertices of G , if one exists.
+* Testing whether G is connected.
+* Computing a spanning tree of G , if G is connected.
+* Computing the connected components of G .
+* Computing a cycle in G , or reporting that G has no cycles.
+ 
 2. Breadth First Search
 
 3. Applications:
