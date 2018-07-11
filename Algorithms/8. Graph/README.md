@@ -24,6 +24,8 @@ A BFS traversal of G takes O(n+m) time.
 
 3. Applications:
 
+*Connectivity Check*: we can use bfs or dfs to traverse the graph and label visited for each node. If there are not visited node left in the graph after traversal, then the graph is not connected.
+
 ## 2. Shortest Paths
 
 1. Bellman-Ford Algorithm
