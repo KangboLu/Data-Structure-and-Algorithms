@@ -11,15 +11,27 @@ class Graph:
   def add_edge(self, node1, node2):
     self.adj_list[node1].append(node2)
 
-  # dfs algorithm
-  def dfs(self, start):
-    # if visited, go back one level
-    if self.visited[start]: 
-      return 
-    print(str(start) + " "),
-    self.visited[start] = True
-    for node in self.adj_list[start]:
-      self.dfs(node) # recursively visit connected node until return
+  # bfs algorithm
+  def bfs(self, start):
+    # initialize the visisted tracker to false
+    for i in self.visited: 
+      i = False
+    queue = [] # create queue to push vertex
+    self.visited[start] = True # make the first vertx visited
+    queue.append(start) # push it to queue
+
+    # checking the graph level by level
+    while len(queue):
+      start = queue[0]
+      print(str(start) + " "),
+      queue.remove(queue[0])
+      
+      # scan the list of connected adjacencyList and enqueue it
+      for i in self.adj_list[start]:
+        if self.visited[i] == False:
+          self.visited[i] = True
+          queue.append(i)
+    print
 
 # ================================
 # testing the Graph class with DFS
@@ -37,5 +49,5 @@ graph.add_edge(2,3)
 graph.add_edge(3,2)
 
 # search the graph using dfs algorithm
-print("Demonstrating DFS algorithm:")
-graph.dfs(0)
+print("Demonstrating BFS algorithm:")
+graph.bfs(0)
