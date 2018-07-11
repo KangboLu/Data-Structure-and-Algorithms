@@ -9,9 +9,9 @@ class Graph {
   vector<bool> visited; // track visited node
 public:
   // constructor to resize the adjacencyList and Visited vector
-  Graph(int V) {
-    adjacencyList.resize(V);
-    visited.resize(V);
+  Graph(int size) {
+    adjacencyList.resize(size);
+    visited.resize(size);
   }
 
   // add adjacencyList to the graph with given current node
