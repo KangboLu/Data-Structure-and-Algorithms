@@ -13,9 +13,6 @@ class Graph:
 
   # bfs algorithm
   def bfs(self, start):
-    # initialize the visisted tracker to false
-    for i in self.visited: 
-      i = False
     queue = [] # create queue to push vertex
     self.visited[start] = True # make the first vertx visited
     queue.append(start) # push it to queue
@@ -34,7 +31,7 @@ class Graph:
     print
 
 # ================================
-# testing the Graph class with DFS
+# testing the Graph class with BFS
 # ================================
 
 # create graph with 3 nodes
