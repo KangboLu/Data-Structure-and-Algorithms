@@ -37,14 +37,27 @@ A BFS traversal of G takes O(n+m) time.
 the graph does not contain a cycle with negative length. 
 (If the graph contains a negative cycle, the algorithm can detect this.)
 
-2. Dijkstra's Algorithm: O(VlogV)
+2. Dijkstra's Algorithm: O(VlogV) using Priority Queue
 
+* Dijkstra’s algorithm 2 finds shortest paths from the starting node to all nodes of
+the graph, like the Bellman–Ford algorithm. 
+* The benefit of Dijsktra’s algorithm is that it is more efficient and can be used for 
+processing large graphs. 
+* However, the algorithm requires that there are no negative weight edges in the graph.
 
 3. Floyd-Warshall Algorithm
+
+* The algorithm maintains a two-dimensional array that contains distances between the nodes. 
+* First, distances are calculated only using direct edges between the nodes, and after this, 
+the algorithm reduces distances by using intermediate nodes in paths.
 
 ## 3. Directed Graphs
 
 1. Topological Sort
+
+A topological sort is an ordering of the nodes of a directed graph such that if
+there is a path from node a to node b , then node a appears before node b in the
+ordering.
 
 2. Dynamic Programming
 
