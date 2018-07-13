@@ -27,9 +27,10 @@
 
 ## 2. Diamter
 
-## 3. All Longest Paths
+The diameter of a tree is the maximum length of a path between two nodes.
+There may be several maximum-length paths
 
-## 4. Binary Trees
+## 3. All Longest Paths
 
 # Spanning Trees
 
