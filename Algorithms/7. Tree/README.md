@@ -39,6 +39,3 @@ There may be several maximum-length paths
 ## 2. Union-find Structure
 
 ## 3. Prim's Algorithm
-
-
-
