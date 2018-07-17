@@ -52,8 +52,37 @@ class PriorityQueue {
       return nItems == 0;
     }
 
+    // get number of item in the queue
+    int getSize() {
+      return nItems;
+    }
+
     // check if the queue is full
     bool isFull() {
       return nItems == maxSize;
     }
+};
+
+int main() {
+  cout << "Testing priority queue class\n\n";
+
+  PriorityQueue pq(5);
+  cout << "- Created a priority queue object with size 5\n";
+  cout << "Queue Size is: " << pq.getSize() << endl;
+
+  pq.insert(30);
+  pq.insert(29);
+  pq.insert(28);
+  pq.insert(31);
+  pq.insert(32);
+  pq.insert(33);
+  cout << "- Inserted values into priority queue\n";
+  cout << "Queue Size is: " << pq.getSize() << endl;
+
+  while (!pq.isEmpty()) {
+    int top = pq.remove();
+    cout << top << " ";
+  }
+  cout << "\n- Cleared values into priority queue\n";
+  cout << "Queue Size is: " << pq.getSize() << endl;
 }
