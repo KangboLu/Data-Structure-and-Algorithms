@@ -57,11 +57,6 @@ class PriorityQueue {
     int getSize() {
       return nItems;
     }
-
-    // check if the queue is full
-    bool isFull() {
-      return nItems == maxSize;
-    }
 };
 
 int main() {
