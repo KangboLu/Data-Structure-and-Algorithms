@@ -27,6 +27,7 @@ class PriorityQueue {
         int i = nItems-1;
         for (i; i >= 0; i--) {
           // if new item larger than current element
+          // move the smaller current item to the back
           if (item > queue[i]) 
             queue[i+1] = queue[i]; // shift upward
           else
