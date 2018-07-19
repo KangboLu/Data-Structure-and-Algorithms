@@ -4,6 +4,12 @@ A queue is a collection of objects that are inserted and removed according to th
 
 ## Array Queue
 
+In array implementation of queue, the `enqueue()` is done by inserting new element to the back of array. 
+`dequeue()` is implemented by removing the front of the array, which is the oldest inserted element.
+
 ## Linked List Queue
+
+In linked list implementation of queue, the `enqueue()` is done by inserting new element after the tail of linked list. 
+`dequeue()` is implemented by reassigning the head of the array, which is the oldest inserted node.
 
 ## Priority Queue
