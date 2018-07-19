@@ -12,9 +12,8 @@ class PriorityQueue {
   public:
     // constructor
     PriorityQueue(int siz) {
-      maxSize = siz;
       nItems = 0; 
-      queue.resize(maxSize);
+      queue.resize(siz);
     }
 
     // insert item to the priority queue
@@ -39,24 +38,16 @@ class PriorityQueue {
     }
 
     // remove minimum item
-    int remove() {
-      return queue[--nItems];
-    }
+    int remove() { return queue[--nItems]; }
 
     // get minimum value
-    int getMin() {
-      return queue[nItems-1];
-    }
+    int getMin() { return queue[nItems-1]; }
 
     // check if it is empty
-    bool isEmpty() {
-      return nItems == 0;
-    }
+    bool isEmpty() { return nItems == 0; }
 
     // get number of item in the queue
-    int getSize() {
-      return nItems;
-    }
+    int getSize() { return nItems; }
 };
 
 int main() {
