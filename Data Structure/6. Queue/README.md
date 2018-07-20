@@ -13,3 +13,8 @@ In linked list implementation of queue, the `enqueue()` is done by inserting new
 `dequeue()` is implemented by reassigning the head of the array, which is the oldest inserted node.
 
 ## Priority Queue
+
+In priority queue, the queue with highest priority is inserted to the front and the queue maintains decrement order of element priority. 
+
+`insert()` is implemented by comparing current priority with exist elements.
+`remove()` is implemented by removing the highest priority element.
