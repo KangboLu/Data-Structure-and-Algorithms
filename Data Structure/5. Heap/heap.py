@@ -38,7 +38,7 @@ class MinHeap:
 
   # get size of the heap
   def get_size(self):
-    return heap_size
+    return self.heap_size
 
   # insert new value to the min heap
   def insert(self, value):
@@ -61,6 +61,12 @@ class MinHeap:
       heap_array[self.parent(index)] = temp
       index = self.parent(index) # move up the index to check min heap property
 
+  # display the content of min heap
+  def dispaly(self):
+    for i in range(self.heap_size):
+      print(str(self.heap_array[i])),
+    print
+
 # ============================
 # testing the min heap class
 # ============================
@@ -77,3 +83,17 @@ minHeap.insert(5)
 minHeap.insert(4)
 minHeap.insert(1)
 print("- Inserted values: 3 2 5 4 1")
+minHeap.heap_status()
+
+# display the heap content
+print("- Display the min heap content:"),
+minHeap.dispaly()
+print
+
+# get minimum value of the min heap
+print("- Get the min value: " + str(minHeap.get_min()));
+print
+
+# get size  of the min heap
+print("- Get the size: " + str(minHeap.get_size()));
+print
