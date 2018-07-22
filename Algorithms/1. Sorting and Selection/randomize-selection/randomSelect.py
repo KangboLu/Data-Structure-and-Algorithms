@@ -33,4 +33,3 @@ print
 
 print("- The " + str(k) + "-th smallest element is:"),
 print(random_select(S, k))
-
