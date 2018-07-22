@@ -60,7 +60,7 @@ class MinHeap:
     self.heap_size += 1
     index = self.heap_size - 1
     self.up_heap(index, value)
-    
+
   # decrease value of key at given index to new value
   def up_heap(self, index, value):
     # retain the min heap order by swapping parent with current key
@@ -102,6 +102,7 @@ class MinHeap:
       return
     if self.get_size == 1:
       self.heap_size -= 1
+      return
 
     # store the min value, move lower right node to the top
     self.heap_array[0] = self.heap_array[self.heap_size-1]
@@ -143,6 +144,20 @@ print
 
 # remove min value of the min heap object
 minHeap.remove_min()
-print("- After removing minimum value of min heap: "),
+print("- After removing minimum value of min heap:"),
 minHeap.dispaly()
+print
+
+# get size  of the min heap
+print("- Get the size: " + str(minHeap.get_size()))
+print
+
+# insert 1 back to the heap
+minHeap.insert(1)
+print("- Inserted value 1:"),
+minHeap.dispaly()
+print
+
+# get size  of the min heap
+print("- Get the size: " + str(minHeap.get_size()))
 print
