@@ -47,20 +47,11 @@ class MinHeap {
     // insert the new key at the end
     heap_size++;
     int i = heap_size - 1;
-    heapArray[i] = value;
-
-    // swap to fix the min heap property if it is violated
-    while (i != 0 && heapArray[parent(i)] > heapArray[i]) {
-      // swap the parent and the current key is parent > current key
-      int temp = heapArray[i];
-      heapArray[i] = heapArray[parent(i)];
-      heapArray[parent(i)] = temp;
-      i = parent(i); // move up the index to check min heap property
-    }
+    upHeap(i, value);
   }
 
-  // change value of key at index 'i' to new_val
-  void decreaseKey(int i, int new_val) {
+  // decrease value of key at index 'i' to new_val
+  void upHeap(int i, int new_val) {
     // retain the min heap order by swapping parent with current key
     heapArray[i] = new_val;
     while (i != 0 && heapArray[parent(i)] > heapArray[i]) {
@@ -75,11 +66,11 @@ class MinHeap {
   // to heapify a subtree with the root at given index
   void minHeapify(int i) {
     // get left and right child index
-    int minIdx = i;
     int leftIdx = left(i);
     int rightIdx = right(i);
 
     // find minIdx by comparing left and child index with current index value
+    int minIdx = i;
     if (leftIdx < heap_size && heapArray[leftIdx] < heapArray[i])
         minIdx = leftIdx;
     if (rightIdx < heap_size && heapArray[rightIdx] < heapArray[minIdx])
@@ -96,8 +87,10 @@ class MinHeap {
 
   // remove minimum element (or root) from min heap
   void removeMin() {
-    if (getSize() <= 0)
+    if (getSize() <= 0) {
       cout << "Empty! No element to extract!";
+      return;
+    }
     if (heap_size == 1)
       heap_size--;
 
@@ -107,12 +100,6 @@ class MinHeap {
     
     // call minHeapif() with root node to restore the heap structure
     minHeapify(0);
-  }
-
-  // deletes a key stored at index i
-  void deleteKey(int i) {
-    decreaseKey(i, INT_MIN); // move up the element to delete
-    removeMin(); // remove the top
   }
 
   // display heap array
@@ -151,12 +138,6 @@ int main() {
   // remove minimum value of min heap
   heap.removeMin();
   cout << "- After removing minimum value of min heap: ";
-  heap.display();
-  cout << endl;
-
-  // delete a given key
-  heap.deleteKey(5);
-  cout << "- After deleteting key 5: ";
   heap.display();
   cout << endl;
 
