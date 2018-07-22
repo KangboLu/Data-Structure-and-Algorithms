@@ -22,7 +22,7 @@ class MinHeap {
   bool isEmpty() { return heap_size == 0; }
 
   // get parent index of given index i
-  int parent(int i) { return (i-1) / 2; }
+  int parent(int i) { return (i - 1) / 2; }
 
   // get index of left child of node at index i
   int left(int i) { return (2 * i + 1); }
@@ -30,14 +30,15 @@ class MinHeap {
   // get index of right child of node at index i
   int right(int i) { return (2 * i + 2); }
 
-  // return the minimum key (key at root) from min heap
+  // return the minimum node from min heap
   int getMin() { return heapArray[0]; }
 
   // get size of the heap
   int getSize() { return heap_size; }
 
   // inserts a new value
-  void insertKey(int value) {
+  void insert(int value) {
+    // the heap is full
     if (heap_size == capacity){
       cout << "\nOverflow: Could not insert anymore\n";
       return;
@@ -131,11 +132,11 @@ int main() {
   cout << "- Created min heap object with size 5\n" << endl;
 
   // insert values into the heap
-  heap.insertKey(3);
-  heap.insertKey(2);
-  heap.insertKey(5);
-  heap.insertKey(4);
-  heap.insertKey(1);
+  heap.insert(3);
+  heap.insert(2);
+  heap.insert(5);
+  heap.insert(4);
+  heap.insert(1);
   cout << "- Inserted values: 3 2 5 4 1\n" << endl;
 
   // display the inside of heap array
@@ -160,7 +161,7 @@ int main() {
   cout << endl;
 
   // insert value 1
-  heap.insertKey(1);
+  heap.insert(1);
   cout << "- Inserted value 1: ";
   heap.display();
   cout << endl;
