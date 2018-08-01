@@ -18,6 +18,14 @@ Selection Sort sorts repeatedly finding the minimum element from unsorted part a
 * Time Complexity: O(n^2)
 * Auxiliary Space: O(1)
 
+## Merge Sort
+
+* Time Complexity: O(nlogn)
+
+## Quick Sort
+
+* Time Complexity: O(nlogn)
+
 ## Randomized Selection
 
 Randomized Selection algorithm finds the k-th smallest element in an unsorted array.
