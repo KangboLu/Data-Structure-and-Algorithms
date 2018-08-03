@@ -20,6 +20,7 @@ Selection Sort sorts repeatedly finding the minimum element from unsorted part a
 
 ## Merge Sort
 
+Merge sort is a divide and conquer algorithm that divides an array into two halves, recurses on both the left and right subarrays, and merges the two sorted halves by comparing which one is larger or smaller.
 * Time Complexity: O(nlogn)
 
 ## Quick Sort
