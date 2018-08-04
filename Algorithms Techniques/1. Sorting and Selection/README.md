@@ -1,4 +1,4 @@
-# Sorting Algorithms
+# Common Sorting Algorithms
 
 ## Bubble Sort
 
@@ -25,7 +25,10 @@ Merge sort is a divide and conquer algorithm that divides an array into two halv
 
 ## Quick Sort
 
+QuickSort is a Divide and Conquer algorithm that picks an element as pivot and partitions the given array around the picked pivot.
 * Time Complexity: O(nlogn)
+
+# Selection Algorithm
 
 ## Randomized Selection
 
