@@ -19,7 +19,7 @@ the following problems in O(n+m) time:
 2. Breadth First Search
 
 Breadth first search traverses the graph level by level.
-I obtain a visited array like how I implement the dfs algorithm.
+It obtains a visited array like how I implement the dfs algorithm.
 A BFS traversal of G takes O(n+m) time.
 
 3. Applications:
