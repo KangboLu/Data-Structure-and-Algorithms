@@ -1,5 +1,9 @@
 # Searching Algorithms
 
+## 0. Linear Search 
+
+**Linear Search** is search the target element from left to right in O(n) time.
+
 ## 1. Binary Search
 
 **Binary Search** is an O(logn) algorithm that search from the mid-location and recursive or iteratively search
