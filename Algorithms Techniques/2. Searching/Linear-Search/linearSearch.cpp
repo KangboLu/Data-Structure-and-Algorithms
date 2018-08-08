@@ -13,7 +13,6 @@ int linearSearch(vector<int> array, int target) {
 int main() {
   cout << "Create array {1, 3, 8, 2, 9, 2, 5, 6}" << endl;
   vector<int> array{1, 3, 8, 2, 9, 2, 5, 6};
-  int size = 8;
   int index = linearSearch(array, 3);
   if (index < 0) 
     cout << "Can't find it!" << endl;
