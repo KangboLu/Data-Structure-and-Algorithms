@@ -6,43 +6,43 @@ using namespace std;
 class Graph {
   vector< vector<int> > adjacencyList;
   vector<bool> visited;
-public:
-  // constructor to resize the adjacencyList and Visited vector
-  Graph(int size) {
-    adjacencyList.resize(size);
-    visited.resize(size);
-  }
+  public:
+    // constructor to resize the adjacencyList and Visited vector
+    Graph(int size) {
+      adjacencyList.resize(size);
+      visited.resize(size);
+    }
 
-  // add adjacencyList to the graph with given current node
-  void add_edge(int node1, int node2) {
-    adjacencyList[node1].push_back(node2);
-  }
+    // add adjacencyList to the graph with given current node
+    void add_edge(int node1, int node2) {
+      adjacencyList[node1].push_back(node2);
+    }
 
-  // Breadth first search algorithm
-  void BFS(int start) {
-    // initialize the visisted tracker to false
-    for (int i : visited) 
-      i = false;
-    queue<int> q; // create queue to push vertex
-    visited[start] = true; // make the first vertx visited
-    q.push(start); // push it to queue
+    // Breadth first search algorithm
+    void BFS(int start) {
+      // initialize the visisted tracker to false
+      for (int i : visited) 
+        i = false;
+      queue<int> q; // create queue to push vertex
+      visited[start] = true; // make the first vertx visited
+      q.push(start); // push it to queue
 
-    // checking the graph level by level
-    while (!q.empty()) {
-      start = q.front();
-      cout << start << " ";
-      q.pop();
-      
-      // scan the list of connected adjacencyList and enque it
-      for (int i : adjacencyList[start]) {
-        if (!visited[i]) {
-          visited[i] = true;
-          q.push(i);
+      // checking the graph level by level
+      while (!q.empty()) {
+        start = q.front();
+        cout << start << " ";
+        q.pop();
+        
+        // scan the list of connected adjacencyList and enque it
+        for (int i : adjacencyList[start]) {
+          if (!visited[i]) {
+            visited[i] = true;
+            q.push(i);
+          }
         }
       }
+      cout << endl;
     }
-    cout << endl;
-  }
 };
 
 int main() {
